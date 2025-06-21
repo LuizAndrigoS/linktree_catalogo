@@ -1,0 +1,15 @@
+<h2>Painel de Administração</h2>
+<form method="POST">
+  <input type="text" name="nome" placeholder="Nome do Catálogo" required>
+  <input type="url" name="link" placeholder="Link do Google Drive" required>
+  <button type="submit">Adicionar</button>
+</form>
+
+<ul>
+  {% for item in catalogos %}
+    <li>{{ item.nome }} - <a href="{{ item.link }}" target="_blank">Acessar</a>
+    | <a href="{{ url_for('delete', id=item.id) }}">Excluir</a></li>
+  {% endfor %}
+</ul>
+
+<a href="{{ url_for('logout') }}">Sair</a>

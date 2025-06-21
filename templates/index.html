@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Catálogos</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Catálogos Disponíveis</h1>
+    {% for item in catalogos %}
+        <a class="btn" href="{{ item.link }}" target="_blank">{{ item.nome }}</a>
+    {% endfor %}
+</body>
+</html>
